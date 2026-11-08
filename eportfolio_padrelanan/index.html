@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexie James T. Padrelanan | Computer Science Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+  <!-- Connection 1: External CSS Link -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Connection 2: External JavaScript Link -->
+  <script src="script.js" defer></script>
+</head>
+<!-- Dark mode is the default: the dark-mode class is already on the body -->
+<body class="dark-mode">
+  <!-- Dynamic Target 1: Dark Mode Toggle (moon button, always visible) -->
+  <button id="theme-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode" aria-pressed="true">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  </button>
+
+  <!-- Floating nav: hidden until the visitor scrolls past the name -->
+  <header id="top-nav" aria-label="Main navigation">
+    <nav>
+      <ul class="links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO: profile and name (plain background with constellations, no floating stars) -->
+    <section id="hero">
+    <canvas id="constellations" aria-hidden="true"></canvas>
+    <div class="wrap hero-grid">
+      <div class="photo">
+        <img src="assests/Selfie.jpg" alt="Alexie James T. Padrelanan profile photo" class="avatar">
+        <!-- <div class="avatar" role="img" aria-label="Profile photo placeholder"></div> -->
+      </div>
+      <div class="hero-text">
+        <p class="hello">Welcome to my Portfolio</p>
+        <h1>Alexie James T. Padrelanan</h1>
+        <p class="lead">1st Year Computer Science Student, with a focus on building robust systems and innovative web applications.</p>
+        <div class="actions">
+          <!-- Dynamic Target 2: Interactive Alert Button -->
+          <button id="contact-btn">Get In Touch</button>
+        </div>
+      </div>
+    </div>
+    </section>
+
+  <!-- BREAK LINE between the hero and the starry area -->
+  <hr class="break">
+
+  <!-- STARRY AREA: everything below the break line -->
+  <div id="stars-zone">
+    <canvas id="stars" aria-hidden="true"></canvas>
+
+    <main class="wrap">
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p class="about-text">I'm a BSCS student at University of the Immaculate Conception, passionate about creating innovative software solutions and continuously expanding my knowledge in the field of computer science.</p>
+      <div class="highlights">
+        <div class="card"><h4>Focus</h4><p>Programming and Software Development</p></div>
+        <div class="card"><h4>Interests</h4><p>System and Web Development</p></div>
+        <div class="card"><h4>Strengths</h4><p>Problem Solving, Team Collaboration</p></div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="filters" role="group" aria-label="Filter skills">
+        <button class="filter active" data-filter="all">All Skills</button>
+        <button class="filter" data-filter="dev">Development</button>
+        <button class="filter" data-filter="design">Design &amp; Media</button>
+        <button class="filter" data-filter="mgmt">Management</button>
+      </div>
+      <div class="skill-grid">
+        <div class="card skill" data-cat="dev"><h3>Web Design / Front-end</h3><p>Crafting sleek, responsive interfaces and seamless user experiences.</p></div>
+        <div class="card skill" data-cat="design"><h3>Photo Editing</h3><p>Enhancing visual assets through professional retouching, color grading, and graphic polish.</p></div>
+        <div class="card skill" data-cat="design"><h3>Video Editing</h3><p>Producing engaging, high-quality video content tailored for diverse digital platforms.</p></div>
+        <div class="card skill" data-cat="mgmt"><h3>Project Management</h3><p>Streamlining workflows, coordinating team efforts, and driving projects to successful completion.</p></div>
+        <div class="card skill" data-cat="dev"><h3>Programmer</h3><p>Architecting robust system logic, scalable software, and dynamic functional solutions.</p></div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>North Davao Colleges, Incorporated</h3>
+        <p>Graduated with Honors</p>2020 - 2024
+      </div>
+    </section>
+    <section id="education">
+      <div class="card">
+        <h3>Panabo City National High School</h3>
+        <p>STEM Student, Graduated with High Honors</p>2024 - 2026
+      </div>
+    </section>
+    <section id="education">
+      <div class="card">
+        <h3>University of the Immaculate Conception</h3>
+        <p>Bachelor of Science in Computer Science</p>2026 - Present
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <div class="contact-grid">
+<div>
+  <h3>Contact Details</h3>
+  <p class="org">Click on any contact card below to quickly copy the information.</p>
+
+  <div class="copy-row">
+    <button class="card copy" data-copy="0909 745 8215"><b>Phone</b><p>   </p><span>0909 745 8215</span></button>
+    <button class="card copy" data-copy="alexiepadrelanan28@gmail.com"><b>Email</b><p>    </p><span>alexiepadrelanan28@gmail.com</span></button>
+    <button class="card copy" data-copy="Quirino Street, Panabo City"><b>Address</b><p>    </p><span>Quirino Street, Panabo City</span></button>
+  </div>
+</div>
+        <form id="msg-form" class="card">
+          <!-- <h3>Send Message</h3>
+          <label>Name<input type="text" required></label>
+          <label>Email<input type="email" required></label>
+          <label>Message<textarea rows="4" required></textarea></label>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main> -->
+
+    <footer class="wrap">
+      <!-- Dynamic Target 3: Year Injection -->
+      <p>&copy; <span id="year"></span> Alexie James T. Padrelanan. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+  <!-- <div id="toast" role="status" aria-live="polite">Copied to clipboard!</div> -->
+</body>
+</html>
